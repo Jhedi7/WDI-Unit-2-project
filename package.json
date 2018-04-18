@@ -1,0 +1,29 @@
+{
+  "name": "wdi-unit-2-project",
+  "version": "1.0.0",
+  "description": "###description of the app: It will be a sort of vet app for new dog owners. It will track vet visits, medications and such. IF possible, I will incorporate the google maps API to possible display dog parks near you!",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jhedi7/WDI-Unit-2-project.git"
+  },
+  "author": "Jhedi Ayala",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Jhedi7/WDI-Unit-2-project/issues"
+  },
+  "homepage": "https://github.com/Jhedi7/WDI-Unit-2-project#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "ejs": "^2.5.8",
+    "express": "^4.16.3",
+    "morgan": "^1.9.0",
+    "nodemon": "^1.17.3",
+    "pg-promise": "^8.3.2"
+  }
+}
