@@ -1,30 +1,25 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Document</title>
-</head>
-<body>
+<% include ../partials/boilerplate %>
 
-  <h1 class="title">
-  Hello World
-</h1>
-<p class="subtitle">
-  <%=message %>
-</p>
-
-  <section class="app-container">
+<section class="movie-container">
   <form method="POST" action="/auth/login">
     <div class="field">
       <p class="control has-icons-left has-icons-right">
         <input class="input" type="text" placeholder="username" name="username">
+        <span class="icon is-small is-left">
+          <i class="fas fa-envelope"></i>
+        </span>
+        <span class="icon is-small is-right">
+          <i class="fas fa-check"></i>
+        </span>
       </p>
     </div>
     <div class="field">
-
+      <p class="control has-icons-left">
         <input class="input" type="password" placeholder="Password" name="password">
-
-
+        <span class="icon is-small is-left">
+          <i class="fas fa-lock"></i>
+        </span>
+      </p>
     </div>
     <div class="field">
       <p class="control">
@@ -34,9 +29,4 @@
   </form>
 </div>
 
-</body>
-</html>
-
-
-
-
+<% include ../partials/end %>

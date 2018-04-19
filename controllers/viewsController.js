@@ -10,6 +10,41 @@ function showStuff(req, res){
   console.log(res.locals.dogs)
 }
 
+function showHome(req, res){
+  console.log('showin ya home!')
+  res.render('home', {
+      home: res.locals.home
+
+  })
+  console.log(res.locals.home)
+}
+
 module.exports = {
-  showStuff: showStuff
+  showLoginForm(req, res) {
+    console.log('got here');
+    res.render('auth/login');
+  },
+
+  showRegisterForm(req, res) {
+    res.render('auth/register');
+  },
+
+  handleCreateUser(req, res) {
+    res.redirect('/myHome');
+  },
+  handleLogout(req, res) {
+    res.redirect('/');
+  },
+  handleDelete(req, res) {
+    res.redirect('/quotes');
+  },
+};
+
+
+
+
+
+module.exports = {
+  showStuff,
+  showHome
 }
