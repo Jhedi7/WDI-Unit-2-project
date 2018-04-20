@@ -6,8 +6,9 @@ DROP TABLE IF EXISTS students CASCADE;
 -- add create tables here
 CREATE TABLE users (
 id SERIAL PRIMARY KEY,
-name VARCHAR(255),
-email VARCHAR(255)
+userName VARCHAR(255) NOT NULL,
+email VARCHAR(255) NOT NULL,
+password_digest VARCHAR(255)
 );
 
 CREATE TABLE dogs (
@@ -30,4 +31,13 @@ CREATE TABLE dogs (
 --   lastname VARCHAR(255),
 --   avatar TEXT,
 --   date_created TIMESTAMP NOT NULL DEFAULT NOW()
+-- );
+
+-- DROP TABLE IF EXISTS users;
+
+-- CREATE TABLE users (
+--     id SERIAL PRIMARY KEY,
+--     uname VARCHAR(255) NOT NULL,
+--     email VARCHAR(255) NOT NULL,
+--     password_digest VARCHAR(255)
 -- );
