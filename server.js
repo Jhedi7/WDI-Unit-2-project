@@ -10,6 +10,7 @@ const path           = require('path');
 const session        = require('express-session');
 const authService    = require('./user/authService');
 const authRouter     = require('./user/authRouter');
+const userRouter     = require('./router/userRouter')
 
 app.use(logger('dev'));
 
@@ -40,17 +41,19 @@ app.get('/', (req, res) => {
 
 
 
-app.get('/myHome', authService.loginRequired, (req, res) => {
-  res.json(req.session);
-});
+// app.get('/myHome', authService.loginRequired, (req, res) => {
+//   res.json(req.session);
+// });
 
-app.get('/', (req, res) => {
-  res.render('home', { message: 'Welcome! This is a public page.' });
-});
+// app.get('/', (req, res) => {
+//   res.render('home', { message: 'Welcome! This is a public page.' });
+// });
 
 
 //app.use('/dogs', dogRouter);
 app.use('/auth', authRouter);
+
+app.use('/users', userRouter);
 
 
 
@@ -59,7 +62,7 @@ app.listen(PORT, () => {
   console.log(`Ready for project two! ${PORT}!`)
 });
 
-app.use("*", (err,req, res) => {
+app.use("*", (err, req, res) => {
     res.status(400).json({
       error: err,
       message: err.message

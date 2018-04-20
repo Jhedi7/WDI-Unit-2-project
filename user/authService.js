@@ -7,11 +7,11 @@ const UserDb = require("../models/userModel");
 function login(req, res, next) {
     let user;
     const loginAttempt = {
-        uname: req.body.uname,
+        userName: req.body.userName,
         email: req.body.email,
         password: req.body.password
       }
-  UserDb.findUser(loginAttempt.uname)
+  UserDb.findUser(loginAttempt.userName)
     .then(userInfo => {
       user = userInfo
       return bcrypt.compareSync(loginAttempt.password, userInfo.password_digest)
@@ -42,7 +42,7 @@ function register(req, res, next) {
   const salt = parseInt(process.env.SALT)
   const hash = bcrypt.hashSync(req.body.password, salt)
   const user = {
-    uname: req.body.uname,
+    userName: req.body.userName,
     email: req.body.email,
     password_digest: hash
   }

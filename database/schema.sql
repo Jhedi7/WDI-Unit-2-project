@@ -1,7 +1,7 @@
 \c dogWellness
 -- remove any records and start the id sequence back to 1
 DROP TABLE IF EXISTS users CASCADE;
-DROP TABLE IF EXISTS students CASCADE;
+DROP TABLE IF EXISTS dogs CASCADE;
 
 -- add create tables here
 CREATE TABLE users (
@@ -20,24 +20,3 @@ CREATE TABLE dogs (
   user_id INT NOT NULL REFERENCES users (id)
 );
 
--- DROP TABLE IF EXISTS users;
-
--- CREATE TABLE users (
---   id SERIAL PRIMARY KEY,
---   username VARCHAR(255) UNIQUE NOT NULL,
---   password_digest TEXT NOT NULL,
---   email VARCHAR(255) UNIQUE NOT NULL,
---   firstname VARCHAR(255),
---   lastname VARCHAR(255),
---   avatar TEXT,
---   date_created TIMESTAMP NOT NULL DEFAULT NOW()
--- );
-
--- DROP TABLE IF EXISTS users;
-
--- CREATE TABLE users (
---     id SERIAL PRIMARY KEY,
---     uname VARCHAR(255) NOT NULL,
---     email VARCHAR(255) NOT NULL,
---     password_digest VARCHAR(255)
--- );

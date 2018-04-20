@@ -37,12 +37,12 @@ module.exports = {
 //     `);
 //   },
 
-//   findOne(username) {
+//   findOne(userName) {
 //     return db.one(`
 //       SELECT *
 //         FROM users
-//        WHERE username = $1
-//     `, username);
+//        WHERE userName = $1
+//     `, userName);
 //   },
 
 // //******************
@@ -96,13 +96,13 @@ module.exports = {
 //   save(user) {
 //     return db.one(`
 //       INSERT INTO users (
-//         username, password_digest, email, firstname, lastname, avatar
+//         userName, password_digest, email, firstname, lastname, avatar
 //       ) VALUES (
-//         $/username/, $/password_digest/, $/email/, $/firstname/, $/lastname/, $/avatar/
+//         $/userName/, $/password_digest/, $/email/, $/firstname/, $/lastname/, $/avatar/
 //       )
-//       ON CONFLICT (username) DO UPDATE
+//       ON CONFLICT (userName) DO UPDATE
 //       SET
-//         username        = $/username/,
+//         userName        = $/userName/,
 //         password_digest = $/password_digest/,
 //         email           = $/email/,
 //         firstname       = $/firstname/,

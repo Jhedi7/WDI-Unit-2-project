@@ -2,7 +2,7 @@
 
 --create users
 
-INSERT INTO users (name, email)
+INSERT INTO users (userName, email, password_digest)
 VALUES ('Danae', 'danae@hotmail.com'),
        ('Kate', 'kate@hotmail.com'),
        ('Whitney', 'Whitney@hotmail.com');
