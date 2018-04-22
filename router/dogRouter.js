@@ -13,7 +13,8 @@ function sendError(err, req, res, next) {
 }
 
 dogRouter.route('/')
-  .get(dogController.getAll, viewsController.showStuff, sendError)
+  //.get(dogController.getAll, viewsController.showStuff, sendError)
+  .post(dogController.createDogProfiles, viewsController.sendCreateProfile)
 
 
 // housesRouter.route('/:id')

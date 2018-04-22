@@ -11,6 +11,7 @@ function showRegisterForm(req, res) {
 
 function  handleUserProfile(req, res) {
     res.redirect('/users/profile');
+    message: 'form goes here!'
 };
 
 function handleLogout(req, res) {

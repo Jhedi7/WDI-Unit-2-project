@@ -6,7 +6,7 @@ const methodOverride = require('method-override');
 const PORT           = process.env.PORT || 3000;
 const app            = express();
 const path           = require('path');
-//const dogRouter    = require('./router/dogRouter');
+const dogRouter      = require('./router/dogRouter');
 const session        = require('express-session');
 const authService    = require('./user/authService');
 const authRouter     = require('./user/authRouter');
@@ -50,11 +50,10 @@ app.get('/', (req, res) => {
 // });
 
 
-//app.use('/dogs', dogRouter);
+app.use('/dogs', dogRouter);
 app.use('/auth', authRouter);
-
 app.use('/users', userRouter);
-
+app.use('/users/profile', dogRouter)
 
 
 
@@ -62,7 +61,7 @@ app.listen(PORT, () => {
   console.log(`Ready for project two! ${PORT}!`)
 });
 
-app.use("*", (err, req, res) => {
+app.use("*", (req, res, err) => {
     res.status(400).json({
       error: err,
       message: err.message
@@ -70,7 +69,7 @@ app.use("*", (err, req, res) => {
 })
 
 //render json object for server errors
-app.use((err, req, res) => {
+app.use((req, res, err) => {
     console.log(err)
     res.status(500).json({
       error: err,

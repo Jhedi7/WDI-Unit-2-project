@@ -1,23 +1,20 @@
 const dogDb = require('../models/dogModels');
 
 
-// function showStuff(req, res){
-//   console.log('showin ya the stuff!')
-//   res.render('dogs', {
-//       dogs: res.locals.dogs
+function showStuff(req, res){
+  console.log('showin ya the stuff!')
+  res.render('dogs', {
+     dogs: res.locals.dogs
 
-//   })
-//   console.log(res.locals.dogs)
-// }
+  })
+}
 
-// function showHome(req, res){
-//   console.log('showin ya home!')
-//   res.render('home', {
-//       home: res.locals.home
-
-//   })
-//   console.log(res.locals.home)
-// }
+function sendCreateProfile(req, res) {
+  dogs = res.locals.dogs
+  //res.redirect('users/profile');
+}
+// res.render('users/profile');
+// res.redirect(`students/${student.id}`);
 
 module.exports = {
   showLoginForm(req, res) {
@@ -30,7 +27,7 @@ module.exports = {
   },
 
   handleCreateUser(req, res) {
-    res.redirect('/myHome');
+    res.redirect('/index');
   },
   handleLogout(req, res) {
     res.redirect('/');
@@ -38,13 +35,16 @@ module.exports = {
   handleDelete(req, res) {
     res.redirect('/quotes');
   },
+  // showProfilePage(req, res){
+  //   res.render('users/profile')
+  // }
 };
 
 
 
 
 
-// module.exports = {
-//   showStuff,
-//   showHome
-// }
+module.exports = {
+  showStuff,
+  sendCreateProfile
+}
