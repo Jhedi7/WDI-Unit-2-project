@@ -17,6 +17,6 @@ CREATE TABLE dogs (
   medication VARCHAR(255),
   vet VARCHAR(255),
   weight INT,
-  user_id INT NOT NULL REFERENCES users (id)
+  user_id INT REFERENCES users (id)
 );
 

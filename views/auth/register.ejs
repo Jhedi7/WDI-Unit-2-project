@@ -1,12 +1,36 @@
 <% include ../partials/top %>
 
-<div class='movie-container'>
-  <form method='POST' action='/auth/register'>
-    <input name='userName' type='text' placeholder='username' required />
-    <input name='email' type='email' placeholder='email' required />
-    <input name='password' type='password' placeholder='password' required />
-    <input type='submit' value='Register!' />
-  </form>
+
+
+<div class="ui equal width form">
+  <form method="POST" action="/auth/register">
+  <div class="fields">
+    <div class="field">
+      <label>Username</label>
+      <input type="text" placeholder="Username" name="userName">
+    </div>
+    <div class="field">
+      <label>Password</label>
+      <input type="password" name="password">
+    </div>
+  </div>
+  <div class="fields">
+    <div class="field">
+      <label>Email</label>
+      <input type="email" placeholder="email" name="email">
+    </div>
+    <div class="field">
+      <label>Middle name</label>
+      <input type="text" placeholder="Middle Name">
+    </div>
+    <div class="field">
+      <label>Last name</label>
+      <input type="text" placeholder="Last Name">
+
+    </div>
+    <div class="ui submit button">Register!</div>
+  </div>
+</form>
 </div>
 
 <% include ../partials/bottom %>

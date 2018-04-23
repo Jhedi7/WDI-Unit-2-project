@@ -1,5 +1,31 @@
-#index {
-    display: flex;
-    flex-direction: column;
-    width: 50%;
+
+
+i.icon{
+  font-size: 3em;
+}
+
+.container.main{
+  margin-top: 5em;
+}
+
+.button{
+  margin-top: 5em;
+}
+div.ui.equal{
+  margin: auto;
+  margin-top: 7em;
+  width: 50%;
+  height: 70%
+}
+.index{
+  width: 50%;
+  height: 20%;
+  margin: auto;
+  margin-left: 500px;
+  margin-top: 25em;
+}
+.button.positive{
+  width: 170px;
+  height: 70px;
+  margin: 25px
 }

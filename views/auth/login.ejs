@@ -1,6 +1,6 @@
 <% include ../partials/top %>
 
-<section class="movie-container">
+<!-- <section class="movie-container">
   <form method="POST" action="/auth/login">
     <div class="field">
       <p class="control has-icons-left has-icons-right">
@@ -35,6 +35,31 @@
       </p>
     </div>
   </form>
-</div>
+</div> -->
 
+
+<div class="ui equal width form">
+  <form method="POST" action="/auth/login">
+  <div class="fields">
+    <div class="field">
+      <label>Username</label>
+      <input type="text" placeholder="Username" name="userName">
+    </div>
+    <div class="field">
+      <label>Password</label>
+      <input type="password" name="password">
+    </div>
+  </div>
+  <div class="fields">
+    <div class="field">
+      <label>Email</label>
+      <input type="email" placeholder="email" name="email">
+    </div>
+    </div>
+    <div class="field">
+    <input type='submit' value='Log in!' class="ui submit button" />
+    <!-- <div class="ui submit button" >Login!</div> -->
+  </div>
+</form>
+</div>
 <% include ../partials/bottom %>

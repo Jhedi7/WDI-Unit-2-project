@@ -1,14 +1,47 @@
 <% include ../partials/top.ejs%>
     <h1>LOG IN FORM GOES HERE!</h1>
 
-    <div class='movie-container'>
-  <form method='POST' action='users/profile'>
-    <input name='dog_name' type='text' placeholder='dog_name' required />
-    <input name='medication' type='text' placeholder='medication' required />
-    <input name='vet ' type='text' placeholder='vet ' required />
-    <input name='weight ' type='text' placeholder='weight' required />
-    <input type='submit' value='Register!' />
-  </form>
+
+
+<!-- <form action="/profile" method="POST">
+  <input type="text" name="dog_name" placeholder="First Name" /><br>
+  <input type="text" name="medication" placeholder="Last Name" /><br>
+  <input type="text" name="vet" placeholder="Image URL" /><br>
+  <input type="text" name="weight" placeholder="Image URL" /><br>
+  <input type="text" name="user_id" placeholder="Image URL" /><br>
+
+  <input type="submit" value="Add Student" />
+</form> -->
+
+<div class="ui equal width form">
+  <form method="POST" action="/profile">
+  <div class="fields">
+    <div class="field">
+      <label>Dog name</label>
+      <input type="text" placeholder="Username" name="dog_name">
+    </div>
+    <div class="field">
+      <label>medication</label>
+      <input type="text" name="medication">
+    </div>
+  </div>
+  <div class="fields">
+    <div class="field">
+      <label>vet</label>
+      <input type="text" placeholder="vet" name="vet">
+    </div>
+    <div class="field">
+      <label>weight</label>
+      <input type="text" placeholder="Dog weight" name="weight">
+    </div>
+    <div class="field">
+      <label>User Id</label>
+      <input type="text" name="user_id" placeholder="User Id">
+
+    </div>
+    <input type='submit' value='Create Profile' class="ui submit button" />
+  </div>
+</form>
 </div>
 
 

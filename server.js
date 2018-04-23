@@ -39,21 +39,10 @@ app.get('/', (req, res) => {
     res.render('index');
 })
 
-
-
-// app.get('/myHome', authService.loginRequired, (req, res) => {
-//   res.json(req.session);
-// });
-
-// app.get('/', (req, res) => {
-//   res.render('home', { message: 'Welcome! This is a public page.' });
-// });
-
-
 app.use('/dogs', dogRouter);
 app.use('/auth', authRouter);
 app.use('/users', userRouter);
-app.use('/users/profile', dogRouter)
+app.use('/profile', dogRouter)
 
 
 

@@ -10,8 +10,9 @@ function showRegisterForm(req, res) {
   };
 
 function  handleUserProfile(req, res) {
-    res.redirect('/users/profile');
-    message: 'form goes here!'
+  console.log('profile page!')
+   res.redirect('/users/profile');
+
 };
 
 function handleLogout(req, res) {

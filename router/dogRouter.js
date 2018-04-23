@@ -13,12 +13,14 @@ function sendError(err, req, res, next) {
 }
 
 dogRouter.route('/')
-  //.get(dogController.getAll, viewsController.showStuff, sendError)
+  .get(dogController.getAll, viewsController.sendDogs, sendError)
   .post(dogController.createDogProfiles, viewsController.sendCreateProfile)
 
 
-// housesRouter.route('/:id')
-//   .get(housesController.getOne, housesController.getStudentsHouse, housesViewController.sendStudentHouse)
+dogRouter.route('/:id')
+  .get(dogController.getOne, viewsController.sendOneDog)
+  .put(dogController.update)
+  .delete(dogController.destroy, viewsController.deleteDog)
 
 
 module.exports = dogRouter;
