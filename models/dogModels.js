@@ -22,6 +22,14 @@ function createDogProfile(dog) {
   );
   return queryPromise;
 }
+
+function createMedication(rx) {
+  const queryPromise = db.one(`
+    INSERT INTO medication`, rx);
+  return queryPromise;
+}
+
+
 function updateDog(dog) {
   const queryPromise = db.one(`
     UPDATE dogs
@@ -49,5 +57,6 @@ module.exports = {
   createDogProfile,
   getOneDog,
   updateDog,
-  deleteDog
+  deleteDog,
+  createMedication
 }

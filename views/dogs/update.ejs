@@ -1,0 +1,35 @@
+<% include ../partials/top.ejs%>
+
+<div class="ui equal width form">
+  <form method="POST" action="/dogs/<%= dog.id %>?_method=PUT" class="put" >
+  <div class="fields">
+    <div class="field">
+      <label>Dog name</label>
+      <input type="text"  name="dog_name" value="<%= dogs.Username %>">
+    </div>
+    <div class="field">
+      <label>medication</label>
+      <input type="text"  value="<%= dogs.medication %>">
+    </div>
+  </div>
+  <div class="fields">
+    <div class="field">
+      <label>vet</label>
+      <input type="text"  name="vet" value="<%= dogs.vet %>">
+    </div>
+    <div class="field">
+      <label>weight</label>
+      <input type="number"  name="weight" value="<%= dogs.weight %>">
+    </div>
+    <div class="field">
+      <label>User Id</label>
+      <input type="number" name="user_id"  value="<%= dogs.user_id %>">
+
+    </div>
+    <input type='submit' value='Create Profile' class="ui submit button" />
+  </div>
+</form>
+</div>
+
+
+<% include ../partials/bottom.ejs %>

@@ -1,0 +1,49 @@
+<% include ./partials/top%>
+
+
+<h1>HERE IS YOUR PUP!</h1>
+
+
+ <div>
+   <h1> Dog name : <%=dog.dog_name%></h1>
+   <h1><%= dog.medication %></h1>
+   <h1><%= dog.vet  %></h1>
+   <h1><%= dog.weight  %></h1>
+ </div>
+
+
+ <div class="ui equal width form">
+  <form method="POST" action="/new/<%= dog.id %>?_method=PUT"  >
+  <div class="fields">
+    <div class="field">
+      <label>Dog name</label>
+      <input type="text"  name="dog_name" value="<%=dog.dog_name%>">
+    </div>
+    <div class="field">
+      <label>medication</label>
+      <input type="text"  value="<%= dog.medication %>">
+    </div>
+  </div>
+  <div class="fields">
+    <div class="field">
+      <label>vet</label>
+      <input type="text"  name="vet" value="<%= dog.vet  %>">
+    </div>
+    <div class="field">
+      <label>weight</label>
+      <input type="number"  name="weight" value="<%= dog.weight  %>">
+    </div>
+    <div class="field">
+      <label>User Id</label>
+      <input type="number" name="user_id"  value="<%= dog.user_id %>">
+
+    </div>
+    <input type='submit' value='Update your dog!' class="ui submit button" />
+  </div>
+</form>
+</div>
+
+
+
+
+ <% include ./partials/bottom %>

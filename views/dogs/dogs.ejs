@@ -1,5 +1,29 @@
 <% include ../partials/top.ejs%>
 
+
+<div style="margin-top: 300px;">
 <h1>DOGS STUFF INCOMING!</h1>
+
+<h1><% dogs.dog_name %></h1>
+<h1><%= dogs.medication %></h1>
+<h1><%= dogs.vet %></h1>
+<h1><%= dogs.weight %></h1>
+
+</div>
+
+
+
+Hello again, <% dogs.forEach((dogs) => { %>
+  <div> your name is "<%=  dogs.dog_name %>, <%=  dogs.id %>, <%= dogs.medication %>, <%= dogs.vet %>, <%= dogs.weight %> "</div>
+<% }) %>
+
+<h1>profile</h1>
+<div class="quotes-list">
+  <% dogs.forEach((dogs) => { %>
+  <a href="/dogs/<%= dogs.dog_name %> "> here </a>
+  <% }) %>
+</div>
+
+
 
 <% include ../partials/bottom.ejs %>

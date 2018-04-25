@@ -10,7 +10,11 @@ VALUES ('Danae', 'danae@hotmail.com'),
 
 --create dogs
 
-INSERT INTO dogs (dog_name, medication, vet, weight, user_id)
-VALUES ('kai', 'heart worm', 'roger', 90, 1),
-       ('lilly', 'joint', 'anna', 75, 2),
-       ('frankie', 'worms', 'tom', 40, 3);
+INSERT INTO dogs (dog_name, vet, weight, user_id)
+VALUES ('kai',  'roger', 90, 1),
+       ('lilly', 'anna', 75, 2),
+       ('frankie', 'tom', 40, 3);
+
+
+INSERT INTO medication (medications)
+VALUES ('heartWorm')

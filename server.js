@@ -6,6 +6,7 @@ const methodOverride = require('method-override');
 const PORT           = process.env.PORT || 3000;
 const app            = express();
 const path           = require('path');
+
 const dogRouter      = require('./router/dogRouter');
 const session        = require('express-session');
 const authService    = require('./user/authService');
@@ -33,16 +34,20 @@ app.use(methodOverride('_method'));
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 
-
-
+app.use('/update', dogRouter)
+app.use('/new:id', dogRouter)
 app.get('/', (req, res) => {
     res.render('index');
 })
 
+app.use('/new:id', dogRouter)
+app.use('/profile', dogRouter)
+app.use('/new', dogRouter)
 app.use('/dogs', dogRouter);
 app.use('/auth', authRouter);
 app.use('/users', userRouter);
-app.use('/profile', dogRouter)
+
+app.use('/update', dogRouter)
 
 
 
@@ -57,7 +62,7 @@ app.use("*", (req, res, err) => {
     })
 })
 
-//render json object for server errors
+
 app.use((req, res, err) => {
     console.log(err)
     res.status(500).json({

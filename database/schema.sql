@@ -20,3 +20,7 @@ CREATE TABLE dogs (
   user_id INT REFERENCES users (id)
 );
 
+CREATE TABLE medication (
+  medication VARCHAR(255)
+);
+

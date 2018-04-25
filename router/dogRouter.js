@@ -17,10 +17,19 @@ dogRouter.route('/')
   .post(dogController.createDogProfiles, viewsController.sendCreateProfile)
 
 
+
 dogRouter.route('/:id')
-  .get(dogController.getOne, viewsController.sendOneDog)
+    .get(dogController.getOne, viewsController.sendOneDog)
+
+
+
+
+dogRouter.get('/:id/update', dogController.update, viewsController.sendUpdateDog)
   .put(dogController.update)
   .delete(dogController.destroy, viewsController.deleteDog)
+
+
+
 
 
 module.exports = dogRouter;

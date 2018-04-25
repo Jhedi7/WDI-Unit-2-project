@@ -1,14 +1,5 @@
 const dogDb = require('../models/dogModels');
 
-
-// function sendStudents(req, res) {
-//   console.log('I send successful responses');
-//   res.render('students/index', {
-//     students: res.locals.students
-//   })
-// }
-
-
 function sendDogs(req, res){
   console.log('showin ya the stuff!')
 
@@ -18,14 +9,26 @@ function sendDogs(req, res){
 }
 
 function sendOneDog(req, res) {
-  res.render('dogs/show', {
+  console.log('sending one dog', res.locals.dog)
+  res.render('./new', {
     dog: res.locals.dog
-  })
+
+   })
+
+  console.log('foreach IS a function!', res.locals.dog)
 }
+
+
+
+
+function handleMed(req, res) {
+    res.redirect('/index');
+  }
 
   function sendCreateProfile(req, res) {
   profile = res.locals.newProfile,
-  res.redirect(`dogs/${profile.id}`);
+  res.redirect(`new/${profile.id}`);
+  console.log('this should be the crated profile function')
 }
 
   function showLoginForm(req, res) {
@@ -57,6 +60,13 @@ function sendOneDog(req, res) {
   res.redirect(`dogs/dogs`);
 }
 
+function sendUpdateDog(req, res) {
+  res.render('users/profile', {
+    dog: res.locals.dog
+  });
+  console.log('i updated!')
+}
+
 
 
 module.exports = {
@@ -69,5 +79,6 @@ module.exports = {
   handleDelete,
   showProfilePage,
   sendOneDog,
-  deleteDog
+  deleteDog,
+  sendUpdateDog
 }

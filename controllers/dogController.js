@@ -18,8 +18,20 @@ function createDogProfiles(req, res, next) {
   console.log('bout to crate a profile!');
   dogDb.createDogProfile(req.body)
     .then(data => {
-      console.log('tried to')
+      console.log('created a profile')
       res.locals.newProfile = data;
+      next();
+    })
+    .catch(err=> {
+      next(err);
+    })
+}
+function createMed(req, res, next) {
+  console.log('bout to crate an rx!');
+  dogDb.createDogProfile(req.body)
+    .then(data => {
+      console.log('tried to')
+      res.locals.medicqtion = data;
       next();
     })
     .catch(err=> {
@@ -42,7 +54,8 @@ function update(req, res, next) {
   req.body.id = req.params.id;
   dogDb.updateDog(req.body)
     .then(data => {
-      res.redirect(`/dogs/${req.body.id}`)
+      res.redirect(`/profile/${req.body.id}`)
+      console.log('trying to update!')
     })
     .catch(err=> {
       err:err
@@ -50,7 +63,7 @@ function update(req, res, next) {
 }
 
 function destroy(req, res) {
-  dogDb.deleteStudent(req.params.id)
+  dogDb.deleteDog(req.params.id)
     .then(() => {
       res.redirect('/dogs');
     })
@@ -66,5 +79,6 @@ module.exports = {
   getAll,
   getOne,
   update,
-  destroy
+  destroy,
+  createMed
 }
